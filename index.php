@@ -8,10 +8,13 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Clean Blog - Start Bootstrap Theme</title>
+    <title>São Lucas Evangelista</title>
+
+    <!-- Custom -->
+    <link href="css/custom.css" rel="stylesheet">
 
     <!-- Bootstrap core CSS -->
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom fonts for this template -->
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -25,16 +28,20 @@
 
   <body>
 
-    <?php include_once("nav_bar.php") ?>
-    
+    <div style="color: black;">
+      <?php include_once("nav_bar.php") ?>
+    </div>
+
     <!-- Page Header -->
-    <header class="masthead" style="background-image: url('img/5ee9ea85d03c08338969db6aa5953448.jpg')">
+    <!-- <header class="masthead" style="background-image: url('img/5ee9ea85d03c08338969db6aa5953448.jpg')"> -->
+    <header id="header-background" class="masthead" style="background-image: url('http://www.acidigital.com//imagespp/size680/Sao_Lucas.jpg');">
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
             <div class="site-heading">
-              <h1>Igreja Paroquial Santo Iago</h1>
-              <span class="subheading">Pau no cu de quem tá lendo</span>
+            <p></p>
+              <!--<h1>Paróquia São Lucas Evangelista</h1>-->
+              <!-- <span class="subheading">Lorem ipsum dolor sit amet</span> -->
             </div>
           </div>
         </div>

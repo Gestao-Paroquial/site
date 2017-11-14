@@ -1,7 +1,19 @@
-$(document).ready(function () {
-    $.ajax({
-        url: "http://localhost:3000/carrousel",
-        success: function (data) {
+document.addEventListener('DOMContentLoaded', function() {
+    const xmlhttp = new XMLHttpRequest();
+    const url = "http://localhost:3000/carrousel";
+
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            let data = JSON.parse(this.responseText);
+            createCorousel(data);
+        }
+    }
+
+    xmlhttp.open('GET', url, true);
+    xmlhttp.send();
+
+    function createCorousel(data) {
+        if (data){
             var mainCarousel = document.getElementById('main-carousel');
 
             data.forEach(function (carouselItem) {
@@ -29,27 +41,37 @@ $(document).ready(function () {
 
                 // carouselImg.setAttributeNode(style);
             });
+        } else {
+            var mainCarousel = document.getElementById('main-carousel');
 
-            /* css */
-            // var style = document.createElement('style');
-            // style.innerHTML = '.carousel-img {' +
-            // 'cursor: pointer;' +
-            // 'height: 450px; !important' +
-            // 'width: 100%;' +
-            // '}';
-            //
-            // var head = document.getElementsByTagName('head')[0];
-            // head.appendChild(style);
-            // console.log(head);
+            no_image_carousel = 
+            '<div class="item">' +
+                '<img src="http://www.acidigital.com//imagespp/size680/Sao_Lucas.jpg"/>' +
+            '</div>';
 
-            // var carouselImg = div.getElementsByClassName('carousel-img')[0];
-            // var style = document.createAttribute('style');
-            // style.value = 'cursor: pointer;';
-            //     // 'height: 450px;' +
-            //     // 'width: 100%;';
+            mainCarousel.innerHTML(no_image_carousel);
 
-            var firstDiv = mainCarousel.firstElementChild;
-            firstDiv.className = 'item active';
         }
-    });
+
+        /* css */
+        // var style = document.createElement('style');
+        // style.innerHTML = '.carousel-img {' +
+        // 'cursor: pointer;' +
+        // 'height: 450px; !important' +
+        // 'width: 100%;' +
+        // '}';
+        //
+        // var head = document.getElementsByTagName('head')[0];
+        // head.appendChild(style);
+        // console.log(head);
+
+        // var carouselImg = div.getElementsByClassName('carousel-img')[0];
+        // var style = document.createAttribute('style');
+        // style.value = 'cursor: pointer;';
+        //     // 'height: 450px;' +
+        //     // 'width: 100%;';
+
+        var firstDiv = mainCarousel.firstElementChild;
+        firstDiv.className = 'item active';
+    }
 });

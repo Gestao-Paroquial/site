@@ -10,6 +10,7 @@
         .carousel__img {
             height: 227px !important;
             width: 100%;
+            margin-top: 62px;
         }
         .carousel {
             margin-top: 60px;
@@ -49,69 +50,65 @@
 
 <script>
     var this_doc = window.document.currentScript.ownerDocument;
-    document.addEventListener('DOMContentLoaded', function() {
-        class CorouselComponent extends HTMLElement {
-            constructor (){
-                super();
-                
-                const xmlhttp = new XMLHttpRequest();
-                const url = "http://localhost:3000/carrousel";
-                
-                xmlhttp.onreadystatechange = function () {
-                    if (this.readyState == 4 && this.status == 200) {
-                        let data = JSON.parse(this.responseText);
-                        createCorousel(data);
-                    }
+    class CorouselComponent extends HTMLElement {
+        constructor (){
+            super();
+            
+            const xmlhttp = new XMLHttpRequest();
+            const url = "http://localhost:3000/carrousel";
+            
+            xmlhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    let data = JSON.parse(this.responseText);
+                    createCorousel(data);
                 }
-                
-                xmlhttp.open('GET', url, true);
-                xmlhttp.send();
-            }
-        }
-        
-        function createCorousel(data) {
-            if (data){
-                var mainCarousel = this_doc.querySelector('#main-carousel');
-                
-                var template = this_doc.querySelector('template');
-                var clone = document.importNode(template.content, true);
-                var mainCarousel = clone.querySelector('#main-carousel');
-                var carousel = document.querySelector('home-carousel');
-                
-                data.forEach(function (carouselItem) {
-                    var div = document.createElement('div');
-                    div.className = 'item';
-                    
-                    var a = document.createElement('a');
-                    var href = document.createAttribute('href');
-                    href.value = carouselItem.destinoDoSlider;
-                    a.setAttributeNode(href);
-                    
-                    var img = document.createElement('img');
-                    var src = document.createAttribute('src');
-                    var alt = document.createAttribute('alt');
-                    src.value = carouselItem.imagem;
-                    alt.value = carouselItem.descricao;
-                    img.setAttributeNode(src);
-                    img.setAttributeNode(alt);
-                    img.className = 'carousel__img img-responsive';
-                    
-                    a.appendChild(img);
-                    div.appendChild(a);
-                    
-                    mainCarousel.appendChild(div);
-                });
-                carousel.appendChild(mainCarousel);
-            } else {
-                var mainCarousel = document.getElementById('main-carousel');
-                no_image_carousel = '<div class="item"><img src="http://www.acidigital.com//imagespp/size680/Sao_Lucas.jpg"/></div>';
-                mainCarousel.innerHTML(no_image_carousel);
             }
             
-            var firstDiv = mainCarousel.firstElementChild;
-            firstDiv.className = 'item active';
+            xmlhttp.open('GET', url, true);
+            xmlhttp.send();
+        }
+    }
+    
+    function createCorousel(data) {
+        if (data){
+            var template = this_doc.querySelector('template');
+            var clone = document.importNode(template.content, true);
+            var mainCarousel = clone.querySelector('#main-carousel');
+            var carousel = document.querySelector('home-carousel');
+            
+            data.forEach(function (carouselItem) {
+                var div = document.createElement('div');
+                div.className = 'item';
+                
+                var a = document.createElement('a');
+                var href = document.createAttribute('href');
+                href.value = carouselItem.destinoDoSlider;
+                a.setAttributeNode(href);
+                
+                var img = document.createElement('img');
+                var src = document.createAttribute('src');
+                var alt = document.createAttribute('alt');
+                src.value = carouselItem.imagem;
+                alt.value = carouselItem.descricao;
+                img.setAttributeNode(src);
+                img.setAttributeNode(alt);
+                img.className = 'carousel__img img-responsive';
+                
+                a.appendChild(img);
+                div.appendChild(a);
+
+                mainCarousel.appendChild(div);
+            });
+            carousel.appendChild(mainCarousel);
+        } else {
+            var mainCarousel = document.getElementById('main-carousel');
+            no_image_carousel = '<div class="item"><img src="http://www.acidigital.com//imagespp/size680/Sao_Lucas.jpg"/></div>';
+            mainCarousel.innerHTML(no_image_carousel);
         }
         
-        window.customElements.define('home-carousel', CorouselComponent);
-    });
+        var firstDiv = mainCarousel.firstElementChild;
+        firstDiv.className = 'item active';
+    }
+    
+    window.customElements.define('home-carousel', CorouselComponent);
 </script>

@@ -28,29 +28,37 @@
     <!-- Components -->
     <link rel="import" href="components/messages.html">
     <link rel="import" href="components/carousel.html">
+    <link rel="import" href="components/liturgy.html">
     
 </head>
 
 <body>
-    <header>
-        <div w3-include-html="nav_bar.html"></div>
-    </header>
+    <div class="container-fluid">
+        <div class="row">
+            <header>
+                <div w3-include-html="nav_bar.html"></div>
+            </header>
+        </div>
+    </div>
     
-    <section>
-        <home-carousel></home-carousel>
-    </section>
+    <div class="container-fluid">
+        <div class="row">
+            <section>
+                <home-carousel></home-carousel>
+            </section>
+        </div>
+    </div>
     
     <div class="container">
         <div class="row">
-            <main>
-                <div class="col-lg-8 col-md-8 " id="message">                    
+            <div class="col-lg-8 col-md-8 " id="message">                    
+                <main>
                     <home-messages></home-messages>
-                </div>
-            </main>
-            
-            <aside>
-                <side-liturgy></side-liturgy>
-            </aside>
+                </main>
+            </div>
+            <div class="col-lg-4 col-md-4">            
+                    <side-liturgy></side-liturgy>                
+            </div>
         </div>
     </div>
     

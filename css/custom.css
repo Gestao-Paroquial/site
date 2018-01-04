@@ -4,30 +4,12 @@
     margin-bottom: -90px;
     background-color: white;
 }
-
 @media only screen and (min-width: 500px) {
     #header-background {
         height: 415px;
         margin-top: 75px;
         margin-bottom: 0;
     }
-    
-    .carousel-img {
-        cursor: pointer !important;
-        height: 450px !important;
-        width: 100%;
-    }
-}
-
-@media only screen and (max-width: 499px) {
-    .carousel-img {
-        height: 227px !important;
-        width: 100%;
-    }
-}
-
-.carousel {
-    margin-top: 60px;
 }
 
 /* INDEX */

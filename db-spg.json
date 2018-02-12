@@ -1,0 +1,26 @@
+{
+    "carousel": [{
+        "imagem": "https://media-cdn.tripadvisor.com/media/photo-o/06/13/27/44/igreja-do-carmo.jpg",
+        "descricao": "Igreja irá fazer evento",
+        "destinoDoSlider": "/mensagem/1"
+    },{
+        "imagem": "https://media-cdn.tripadvisor.com/media/photo-o/06/13/27/44/igreja-do-carmo.jpg",
+        "descricao": "Outro evento da igreja",
+        "destinoDoSlider": "/mensagem/2"
+    },{
+        "imagem": "https://pmchollywoodlife.files.wordpress.com/2016/02/rihanna-looks-work-music-video-ftr.jpg",
+        "descricao": "Mais um acredita?",
+        "destinoDoSlider": "/mensagem/3"
+    }],
+    "messages": [{
+        "header": "foo",
+        "content": "blau",
+        "footer": "mesagem",
+        "link": "/mensagem/54"
+    },{
+        "header": "foo",
+        "content": "blau",
+        "footer": "mesagem",
+        "link": "/mensagem/54"
+    }]
+}

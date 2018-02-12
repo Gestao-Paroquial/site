@@ -1,0 +1,16 @@
+.liturgy-title {
+    margin-top: 30px;
+}
+
+.liturgy-img {
+    width: 100%;
+    cursor: pointer !important;
+}
+
+.liturgy-paragraph {
+    text-align: justify;  
+}
+
+.no-decoration {
+    text-decoration: none;
+}

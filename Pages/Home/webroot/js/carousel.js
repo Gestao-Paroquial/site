@@ -1,9 +1,10 @@
 $(document).ready(() => {
-    $.getJSON("http://localhost:3000/carousel", {}, (res) => {
-        if (res) {
+    $.getJSON("/db-spg.json", {}, ({ carousel }) => {
+
+        if (carousel) {
             let carousel_inner = document.querySelector('.carousel-inner');
 
-            res.forEach((item) => {
+            carousel.forEach((item) => {
                 let carouse_item = carouselItemView(item);
                 $(carousel_inner).append(carouse_item);
             });

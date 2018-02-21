@@ -28,6 +28,7 @@ function createMessages(data) {
         let post_ancher = document.createElement('a');
         let post_ancher_href = document.createAttribute('href');
         post_ancher_href.value = data[i].link;
+        post_ancher.target = "_blank";
         post_ancher.setAttributeNode(post_ancher_href);
 
         let post_title = document.createElement('h2');

@@ -1,78 +1,94 @@
 {
-    "carousel": [{
-        "imagem": "https://media-cdn.tripadvisor.com/media/photo-o/06/13/27/44/igreja-do-carmo.jpg",
-        "descricao": "Igreja irá fazer evento",
-        "destinoDoSlider": "/mensagem/1"
+    "carousel": [
+    {
+        "imagem": "https://upload.wikimedia.org/wikipedia/commons/7/78/Igreja_de_S%C3%A3o_Jorge%2C_fachada%2C_Velas%2C_Ilha_de_S%C3%A3o_Jorge%2C_A%C3%A7ores.JPG",
+        "descricao": "Mais um acredita?",
+        "destinoDoSlider": "/mensagem/3"
     },{
         "imagem": "https://i2.wp.com/www.thegatewayonline.ca/wp-content/uploads/2015/04/Opinion-Supplied-Credit-Joe-Ravi-Catholic-Churches-are-BoOoOoring.jpg?fit=1200%2C675&ssl=1",
         "descricao": "Outro evento da igreja",
         "destinoDoSlider": "/mensagem/2"
     },{
-        "imagem": "https://upload.wikimedia.org/wikipedia/commons/7/78/Igreja_de_S%C3%A3o_Jorge%2C_fachada%2C_Velas%2C_Ilha_de_S%C3%A3o_Jorge%2C_A%C3%A7ores.JPG",
-        "descricao": "Mais um acredita?",
-        "destinoDoSlider": "/mensagem/3"
+        "imagem": "https://media-cdn.tripadvisor.com/media/photo-o/06/13/27/44/igreja-do-carmo.jpg",
+        "descricao": "Igreja irá fazer evento",
+        "destinoDoSlider": "/mensagem/1"
     }],
     "messages": [{
-        "header": "foo",
-        "content": "blau",
-        "footer": "mesagem",
+        "header": "Informação importante",
+        "content": "Mensagem do pessoal da administração da igreja",
+        "footer": "23/02/2018",
         "link": "/mensagem/54"
     },{
-        "header": "foo",
-        "content": "blau",
-        "footer": "mesagem",
+        "header": "Roupas para crianças",
+        "content": "Arrecadação de roupas para doação para crianças carentes",
+        "footer": "22/02/2018",
         "link": "/mensagem/54"
     }],
     "agenda": [{
         "segunda": {
             "evento": "Bingo",
-            "descricao": "Nesse ",
+            "descricao": "Bingo para doação",
             "data": "05/10/1080",
             "horario": "10:30"
         },
         "terca": {
-            "evento": "Bingo",
-            "descricao": "Nesse ",
+            "evento": "Evento",
+            "descricao": "Algum evento da igreja",
             "data": "05/10/1080",
             "horario": "10:30"
         },
         "quarta": {
-            "evento": "Bingo",
-            "descricao": "Nesse ",
+            "evento": "Festa da paróquia",
+            "descricao": "Festa para comemorar o dia de algo",
             "data": "05/10/1080",
             "horario": "10:30"
         },
         "quinta": {
             "evento": "Bingo",
-            "descricao": "Nesse ",
+            "descricao": "Bingo para doação",
             "data": "05/10/1080",
             "horario": "10:30"
         },
         "sexta": {
-            "evento": "Bingo",
-            "descricao": "Nesse ",
+            "evento": "Missa",
+            "descricao": "Misa especial de dia das mães",
             "data": "05/10/1080",
             "horario": "10:30"
         },
         "sabado": {
-            "evento": "Bingo",
-            "descricao": "Nesse ",
+            "evento": "Sítio",
+            "descricao": "Passeio para sítio da igreja",
             "data": "05/10/1080",
             "horario": "10:30"
         },
         "domingo": {
-            "evento": "Bingo",
-            "descricao": "Nesse ",
+            "evento": "Passeio",
+            "descricao": "Passeio para algum lugar",
             "data": "05/10/1080",
             "horario": "10:30"
         }
     },{
-        "segunda": "Futebol",
+        "segunda": {
+            "evento": "Futebol",
+            "descricao": "Futebol para quem curte",
+            "data": "05/10/1080",
+            "horario": "10:30"
+        },
         "terca": "",
-        "quarta": "",
+        "quarta": {
+            "evento": "Café da manha",
+            "descricao": "Café da manhã na igreja com missa",
+            "data": "05/10/1080",
+            "horario": "10:30"
+        },
         "quinta": "",
         "sexta": "",
-        "sabado": "",
+        "sabado": {
+            "evento": "Missa",
+            "descricao": "Café da manhã na igreja com missa",
+            "data": "05/10/1080",
+            "horario": "10:30"
+        },
         "domingo": ""
     }]
 }

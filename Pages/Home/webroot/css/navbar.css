@@ -1,0 +1,11 @@
+#mainNav .navbar-brand {
+    color: white;
+}
+
+.nav-link {
+    color: white !important;
+}
+
+#mainNav {
+    background-color: #324c64;    
+}

@@ -8,7 +8,8 @@ let noChurchEvent = {
 window.onload = () => {
     let schedule_tbody = document.querySelector('.schedule__table tbody');
     
-    let schedule_itens = $.getJSON("http://localhost:3000/agenda", {}, (res) => {
+    let schedule_itens = $.getJSON("db.json", {}, (res) => {
+        res = res.agenda;
         res.forEach(item => {
             $(schedule_tbody).append(getScheduleTBody(item));
         });
@@ -17,7 +18,6 @@ window.onload = () => {
 }
 
 function getScheduleTBody(item) {
-    console.log(item.terca);
     let segunda = item.segunda ? item.segunda : noChurchEvent;
     let terca = item.terca ? item.terca : noChurchEvent;
     let quarta = item.quarta ? item.quarta : noChurchEvent;

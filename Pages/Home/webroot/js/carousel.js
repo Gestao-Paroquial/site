@@ -1,5 +1,6 @@
 $(document).ready(() => {
-    $.getJSON("http://localhost:3000/carousel", {}, (res) => {
+    $.getJSON("/db.json", {}, (res) => {
+        res = res.carousel;
         if (res) {
             let carousel_inner = document.querySelector('.carousel-inner');
 

@@ -3,7 +3,7 @@ class MessagesComponent extends HTMLElement {
         super();
         
         const xmlhttp = new XMLHttpRequest();
-        const url = "http://localhost:3000/messages";
+        const url = "/db.json";
         
         xmlhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
@@ -18,6 +18,7 @@ class MessagesComponent extends HTMLElement {
 }
 
 function createMessages(data) {
+    data = data.messages;
     var message = document.querySelector('#message');
     
     for (let i = 0; i < data.length; i++) {

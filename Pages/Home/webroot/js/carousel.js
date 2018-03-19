@@ -1,10 +1,10 @@
 $(document).ready(() => {
-    $.getJSON("/db.json", {}, (res) => {
-        res = res.carousel;
-        if (res) {
+    $.get("http://localhost:8000/api/eventosHome", {}, (carousel) => {
+
+        if (carousel) {
             let carousel_inner = document.querySelector('.carousel-inner');
 
-            res.forEach((item) => {
+            carousel.forEach((item) => {
                 let carouse_item = carouselItemView(item);
                 $(carousel_inner).append(carouse_item);
             });
@@ -15,10 +15,11 @@ $(document).ready(() => {
 });
 
 function carouselItemView(item) {
+    const imagem = `http://localhost:8000${item.imagem}`;
     return `
     <div class="carousel-item">
-        <a href="${item.destinoDoSlider}">
-            <img class="d-block carousel__img" src="${item.imagem}" alt="${item.descricao}">
+        <a href="${item.destino}" target="_blank">
+            <img class="d-block carousel__img" src="${imagem}" alt="${item.descricao}">
         </a>
     </div>`
 }

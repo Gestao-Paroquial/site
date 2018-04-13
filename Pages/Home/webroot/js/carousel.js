@@ -1,7 +1,7 @@
 function buildCarousel(carousel_inner) {
     if (carousel_inner) {
         
-        $.get("http://localhost:8000/api/eventosHome", {}, (carousel) => {
+        $.get("http://paroquiasle.org.br/api/eventosHome", {}, (carousel) => {
             
             if (carousel) {
                 carousel.forEach((item) => {
@@ -27,7 +27,7 @@ function buildCarousel(carousel_inner) {
 buildCarousel(document.querySelector('.carousel-inner'));
 
 function carouselItemView(item) {
-    const imagem = !item.error ? `http://localhost:8000${item.imagem}` : 'https://www.altoastral.com.br/wp-content/uploads/2016/11/igreja-catolica.jpg';
+    const imagem = !item.error ? `http://paroquiasle.org.br${item.imagem}` : 'https://www.altoastral.com.br/wp-content/uploads/2016/11/igreja-catolica.jpg';
     
     return `
         <div class="carousel-item">

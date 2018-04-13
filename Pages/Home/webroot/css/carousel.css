@@ -4,10 +4,14 @@
     margin-top: 62px;
 }
 
+.carousel__masthead {
+    width: 100%;
+}
+
 @media only screen and (min-width: 500px) {
     .carousel__img {
         cursor: pointer !important;
         height: 450px;
-        width: 1840px ;
+        /* width: 1840px ; */
     }
 }

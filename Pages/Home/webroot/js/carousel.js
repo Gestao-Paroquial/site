@@ -24,7 +24,7 @@ function buildCarousel(carousel_inner) {
         }, 0);
     }
 }
-buildCarousel();
+buildCarousel(document.querySelector('.carousel-inner'));
 
 function carouselItemView(item) {
     const imagem = !item.error ? `http://localhost:8000${item.imagem}` : 'https://www.altoastral.com.br/wp-content/uploads/2016/11/igreja-catolica.jpg';

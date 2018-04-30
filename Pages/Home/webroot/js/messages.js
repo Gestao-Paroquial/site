@@ -3,7 +3,7 @@ class MessagesComponent extends HTMLElement {
         super();
 
         const xmlhttp = new XMLHttpRequest();
-        const url = "http://paroquiasle.org.br/api/mensagensParoco";
+        const url = "http://laravel.paroquiasle.org.br/api/mensagensParoco";
 
         xmlhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {

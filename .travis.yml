@@ -1,10 +1,12 @@
 
-language:
-  node_js
+language: node_js
 
 node_js:
-  - "node"
+- 8.9.4
 
+addons:
+  ssh_known_hosts: 165.227.197.233
+  
 install:
   npm install
 

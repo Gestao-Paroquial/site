@@ -1,10 +1,3 @@
-const showErrors = (error) => Object.values(error).forEach(alert);
-
-const formValuesToObject = (form) => $(form).serializeArray().reduce((prev, curr)=>{
-    prev[curr.name] = curr.value;
-    return prev
-},{});
-
 function sendMail(form) {
     if (form) {
         $('.casamento__form').submit(function (event) {
@@ -14,7 +7,7 @@ function sendMail(form) {
 
             $.ajax({
                 type: 'post',
-                url: 'http://laravel.paroquiasle.org.br/api/registrarPedidoDeCasamento',
+                url: `${backEndUrl}/api/registrarPedidoDeCasamento`,
                 data: JSON.stringify(data),
                 contentType: "application/json; charset=utf-8",
                 traditional: true,

@@ -1,38 +1,45 @@
 function buildCarousel(carousel_inner) {
-    if (carousel_inner) {
-        
-        $.get("http://laravel.paroquiasle.org.br/api/eventosHome", {}, (carousel) => {
-            
-            if (carousel) {
-                carousel.forEach((item) => {
-                    let carouse_item = carouselItemView(item);
-                    $(carousel_inner).append(carouse_item);
-                });         
-            } 
-        }).fail(function() {
-            $(carousel_inner).append(carouselItemView({
-                error: true,
-                destino: '/index.html',
-                descricao: "igreja são lucas"
-            }));
-        }).always(function () {
-            carousel_inner.firstChild.nextSibling.className = "carousel-item active";
+  if (carousel_inner) {
+    $.get(`${backEndUrl}/api/eventosHome`, {}, carousel => {
+      if (carousel) {
+        carousel.forEach(item => {
+          let carouse_item = carouselItemView(item);
+          $(carousel_inner).append(carouse_item);
         });
-    } else {
-        setTimeout(function() {
-            buildCarousel(document.querySelector('.carousel-inner'));
-        }, 0);
-    }
+      }
+    })
+      .fail(function() {
+        $(carousel_inner).append(
+          carouselItemView({
+            error: true,
+            destino: "/index.html",
+            descricao: "igreja são lucas"
+          })
+        );
+      })
+      .always(function() {
+        carousel_inner.firstChild.nextSibling.className =
+          "carousel-item active";
+      });
+  } else {
+    setTimeout(function() {
+      buildCarousel(document.querySelector(".carousel-inner"));
+    }, 0);
+  }
 }
-buildCarousel(document.querySelector('.carousel-inner'));
+buildCarousel(document.querySelector(".carousel-inner"));
 
 function carouselItemView(item) {
-    const imagem = !item.error ? `http://laravel.paroquiasle.org.br${item.imagem}` : 'https://www.altoastral.com.br/wp-content/uploads/2016/11/igreja-catolica.jpg';
-    
-    return `
+  const imagem = !item.error
+    ? `${backEndUrl}${item.imagem}`
+    : "https://www.altoastral.com.br/wp-content/uploads/2016/11/igreja-catolica.jpg";
+
+  return `
         <div class="carousel-item">
             <a href="${item.destino}" target="_blank">
-                <img class="d-block carousel__img" src="${imagem}" alt="${item.descricao}">
+                <img class="d-block carousel__img" src="${imagem}" alt="${
+    item.descricao
+  }">
             </a>
-        </div>`
+        </div>`;
 }

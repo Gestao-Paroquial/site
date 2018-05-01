@@ -4,10 +4,12 @@ function sendMail(form) {
             event.preventDefault(); 
 
             const data = formValuesToObject(form);
+            data.casamento = true;
+            data.batismo = false;
 
             $.ajax({
                 type: 'post',
-                url: `${backEndUrl}/api/registrarPedidoDeCasamento`,
+                url: `${backEndUrl}/api/pedidos`,
                 data: JSON.stringify(data),
                 contentType: "application/json; charset=utf-8",
                 traditional: true,

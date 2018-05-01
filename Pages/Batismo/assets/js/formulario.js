@@ -1,13 +1,14 @@
-
 $(document).ready(() => {
   $(document).on("submit", "#batismo-form", function(event) {
     event.preventDefault();
 
     const data = formValuesToObject(this);
+    data.casamento = false;
+    data.batismo = true;
 
     $.ajax({
       type: "post",
-      url: `${backEndUrl}/api/registrarPedidoDeCasamento`,
+      url: `${backEndUrl}/api/pedidos`,
       data: JSON.stringify(data),
       contentType: "application/json; charset=utf-8",
       traditional: true,

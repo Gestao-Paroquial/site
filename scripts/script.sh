@@ -3,4 +3,5 @@ set -x
 
 cd /var/www/html/site/ && \
 git pull origin master && \
-npm install
+npm install && \
+rm -rf node_modules

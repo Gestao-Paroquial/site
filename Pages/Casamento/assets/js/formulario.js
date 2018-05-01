@@ -14,7 +14,7 @@ function sendMail(form) {
 
             $.ajax({
                 type: 'post',
-                url: '/api/registrarPedidoDeCasamento',
+                url: 'http://laravel.paroquiasle.org.br/api/registrarPedidoDeCasamento',
                 data: JSON.stringify(data),
                 contentType: "application/json; charset=utf-8",
                 traditional: true,

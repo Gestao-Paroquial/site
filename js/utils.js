@@ -1,4 +1,13 @@
-const showErrors = error => Object.values(error).forEach(alert);
+const getTextError = (error, key) => error[key].map(text => text).join("\n");
+
+const showErrors = error => {
+  Object.keys(error).forEach(key => {
+    const input = $(`input[name=${key}]`);
+    input.addClass("is-invalid");
+    input.next().text(getTextError(error, key));
+  });
+  // input[name=myname]
+};
 
 const formValuesToObject = form =>
   $(form)

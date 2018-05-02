@@ -2,6 +2,11 @@ $(document).ready(() => {
   $(document).on("submit", "#batismo-form", function(event) {
     event.preventDefault();
 
+    $("#batismo-form input").each(function() {
+      $(this).removeClass("is-invalid");
+      $(this).next().text("");
+    });
+
     const data = formValuesToObject(this);
     data.casamento = false;
     data.batismo = true;

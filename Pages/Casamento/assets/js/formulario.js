@@ -15,7 +15,7 @@ function sendMail(form) {
                 traditional: true,
                 success: function (res) {
                     if (res.success) alert('sucesso')
-                    if(res.error) showErrors(res.error);
+                    if(res.error) Object.values(res.error).forEach(alert);
                 }
             });
         });

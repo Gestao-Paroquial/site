@@ -1,0 +1,57 @@
+.casamento__title {
+    text-align: center;
+}
+
+.casamento__form {
+    background-color: #3683bf;
+    padding: 50px 0;
+}
+
+.casamento__form input {
+    font-family: arial, sans-serif;
+    border-radius: 0 5px 5px 0;
+    margin-top: 12px;
+    width: 80%;
+    margin-left: -5px;
+}
+
+.casamento__form .centered {
+    text-align: center;
+}
+
+.casamento__form input[type="submit"] {
+    margin-top: 50px;
+    border-radius: 5px;
+}
+
+.casamento__form i {
+    border: solid 1px;
+    padding: 7px 19px;
+    border-radius: 5px 0 0 5px;
+}
+
+.casamento__form i.cpf {
+    padding: 7px 15px;
+}
+
+.casamento__form i.email {
+    padding: 7px 17px;
+}
+
+@media only screen and (min-width: 576px) {
+    .casamento__form i.name {
+        margin-left: 5px;
+    }
+    .casamento__form i.date {
+        padding: 7px 17px;
+    }
+    .casamento__form input.date {
+        width: 76%;
+    }
+    .casamento__form {
+        padding: 50px 0 180px 0px;
+        border-radius: 5px;
+        box-shadow: 3px 3px 4px;
+        text-align: center;
+    }
+}

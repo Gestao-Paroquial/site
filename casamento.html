@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <div w3-include-html="head.html"></div>
+
+    <!-- Custmo CSS -->
+    <link rel="stylesheet" href="/Pages/Casamento/assets/css/formulario.css">
+</head>
+
+<body>
+
+    <div w3-include-html="nav_bar.html"></div>
+
+    <div w3-include-html="Pages/Casamento/Template/casamento.html"></div>
+
+    <div w3-include-html="footer.html"></div>
+
+    <!-- Bootstrap core JavaScript -->
+    <!-- <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/popper/popper.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Custom scripts for this template -->
+    <script src="js/clean-blog.min.js"></script>
+
+    <!-- utils -->
+    <script src="js/utils.js"></script>
+
+    <!-- Custom scripts -->
+    <script src="Pages/Casamento/assets/js/formulario.js"></script>
+
+    <!-- Include -->
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+    <script>
+        w3.includeHTML();
+    </script>
+
+    <!-- Facebook -->
+    <div id="fb-root"></div>
+    <script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+</body>
+
+</html>

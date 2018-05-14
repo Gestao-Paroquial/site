@@ -7,10 +7,11 @@
     </div>
     <div class="row">
         <div class="col-md-6">
-            <h3>Insira os seus dados e a data predendida</h3>
+            <h3>Insira os seus dados e a data pretendida</h3>
             <p>
-                Preencha o formulário ao lado com seus dados, 
-                enviaremos um e-mail o mais rápido possível com a confirmação da disponibilidade do padre.
+                Preencha o formulário ao lado com seus dados. 
+                Enviaremos um e-mail o mais rápido possível com a 
+                confirmação da disponibilidade do padre.
             </p>
         </div>
         <div class="col-sm-12 col-md-6">
@@ -31,9 +32,18 @@
                     <input type="text" name="email" placeholder="Digite seu e-mail">
                 </div>
 
+                <div class="col-md-12">
+                    <i class="fa fa-home"></i>
+                    <select name="pastoral" id="casamento__pastoral" class=" casamento__pastoral">
+                        <option value="">Escolha a paroquia</option>
+                    </select>
+                </div>
+
                 <div>
                     <i class="fa fa-calendar date"></i>
-                    <input class="date" type="date" name="data" placeholder="Escolha a data pretendida">
+                    <input  class="date" 
+                            id="casamento__datepicker"
+                            name="data" placeholder="Escolha a data pretendida">
                 </div>
 
                 <div class="col-md-12 centered">

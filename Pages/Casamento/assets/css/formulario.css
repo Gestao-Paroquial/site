@@ -7,12 +7,18 @@
     padding: 50px 0;
 }
 
-.casamento__form input {
+.casamento__form input, select {
     font-family: arial, sans-serif;
     border-radius: 0 5px 5px 0;
     margin-top: 12px;
     width: 80%;
     margin-left: -5px;
+}
+
+.casamento__form .casamento__pastoral {
+    height: 35px;
+    border-radius: 0;
+    -webkit-appearance: none;
 }
 
 .casamento__form .centered {

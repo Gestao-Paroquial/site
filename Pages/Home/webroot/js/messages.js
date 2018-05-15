@@ -81,15 +81,15 @@ function createPaginationButtons(res) {
   }
   rowPagination.appendChild(viewButtons(res.next_page_url, "Proximo"));
 
-  let links = document.querySelectorAll('.page-link');
-  links.forEach(link => {
-    link.addEventListener("click", function () {
-      removePost();
-      ajaxMessagemParoco(this.getAttribute('data-href'));
-      window.scrollTo(0, 0);
-    });
-  });
- }
+//   let links = document.querySelectorAll('.page-link');
+//   links.forEach(link => {
+//     link.addEventListener("click", function () {
+//       removePost();
+//       ajaxMessagemParoco(this.getAttribute('data-href'));
+//       window.scrollTo(0, 0);
+//     });
+//   });
+//  }
 
 function viewButtons(url, i) {
   let li = document.createElement('li');

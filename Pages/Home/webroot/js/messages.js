@@ -79,7 +79,7 @@ function createPaginationButtons(res) {
     if (i == res.current_page) button.firstElementChild.style.backgroundColor = '#ccc';
     rowPagination.appendChild(button);
   }
-  rowPagination.appendChild(viewButtons(res.next_page_url, "PrÃ³ximo"));
+  rowPagination.appendChild(viewButtons(res.next_page_url, "Pr&#243;ximo"));
 
   let links = document.querySelectorAll('.page-link');
   links.forEach(link => {

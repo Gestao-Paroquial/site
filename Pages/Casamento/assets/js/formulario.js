@@ -1,12 +1,3 @@
-const showErrors = (error) => Object.values(error).forEach(alert);
-
-const formValuesToObject = (form) => $(form).serializeArray().reduce((prev, curr) => {
-    console.log(curr.value);
-
-    prev[curr.name] = curr.value;
-    return prev
-}, {});
-
 function sendMail(form) {
     if (form) {
         $('.casamento__form').submit(function(event) {
@@ -67,8 +58,8 @@ function loadAgendaOnPicker() {
     var date_to_disable;
     $.ajax({
         type: 'get',
-        // url: '/api/agendas',
-        url: 'http://paroquiasle.org.br/api/agenda',
+        // url: `${backEndUrl}/api/agendas`,
+        url: 'http://laravel.paroquiasle.org.br/api/agenda',
         contentType: "application/json; charset=utf-8",
         success: (eventos) => {
             if (eventos) {

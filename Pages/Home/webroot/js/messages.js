@@ -8,7 +8,7 @@ class MessagesComponent extends HTMLElement {
 
 function ajaxMessagemParoco(href) {
   const xmlhttp = new XMLHttpRequest();
-  const url = href ? href : `${backEndUrl}/api/mensagensParoco`;
+  const url = href ? href : `${backEndUrl}/api/mensagensParocoPaginacao`;
 
   xmlhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {

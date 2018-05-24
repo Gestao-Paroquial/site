@@ -28,7 +28,7 @@ $(document).ready(() => {
       type: "post",
       url: `${backEndUrl}/api/pedidos`,
       data: JSON.stringify(data),
-      contentType: "application/json; charset=utf-8",
+      contentType: "application/json",
       traditional: true,
       success: function (res) {
         if (res.success) sucesso(data);

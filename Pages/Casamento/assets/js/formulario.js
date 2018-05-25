@@ -14,7 +14,7 @@ function sendMail(form) {
 				contentType: "application/json; charset=utf-8",
 				traditional: true,
 				success: function (res) {
-					if (res.success) sucesso(data);
+					if (res.success) $('#casamento__success').modal('show');;
 					if (res.error) showWeddingErrors(res);
 				}
 			});

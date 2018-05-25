@@ -56,7 +56,6 @@ function createMessages(res) {
 
     let post_paragraph = document.createElement("p");
     post_paragraph.className = "post-meta";
-    console.log(res.data[i])
     post_paragraph.innerHTML = res.data[i].mensagem.replace(/\n/g, '</br>');
 
     post_preview.appendChild(post_paragraph);

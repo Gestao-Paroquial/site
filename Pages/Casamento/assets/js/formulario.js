@@ -1,11 +1,14 @@
 function sendMail(form) {
 	if (form) {
+		loadAgendaOnPicker();
 		$('.casamento__form').submit(function (event) {
 			event.preventDefault();
 
 			let date = $('#casamento__datepicker').val();
 			$('#casamento__datepicker').val(date.split('/').reverse().join('-'));
 			const data = formValuesToObject(form);
+			data.casamento = true;
+			data.batismo = false;
 
 			$.ajax({
 				type: 'post',
@@ -37,12 +40,10 @@ function showWeddingErrors(res) {
 
 sendMail(document.querySelector('.casamento__form'));
 
-window.onload = function () {
-
-	loadAgendaOnPicker();
+$(document).ready(function () {
 	loadParoquiaComboBox();
 	//ToDO: Mudar rotas do ajax
-}
+})
 
 function loadParoquiaComboBox() {
 	$.ajax({
@@ -73,6 +74,7 @@ function loadAgendaOnPicker() {
 					date_to_disable = evento.data_inicio_evento;
 				});
 			}
+
 		},
 		error: (error) => {
 			console.log(error);

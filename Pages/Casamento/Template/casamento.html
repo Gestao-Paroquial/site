@@ -13,6 +13,7 @@
                 Enviaremos um e-mail o mais rápido possível com a 
                 confirmação da disponibilidade do padre.
             </p>
+            <div class="casamento__message-error"></div>
         </div>
         <div class="col-sm-12 col-md-5">
             <form class="casamento__form" action="">
@@ -24,7 +25,7 @@
 
                 <div class="col-md-12">
                     <i class="fa fa-id-card cpf"></i>
-                    <input type="text" name="cpf" placeholder="Digite seu CPF">
+                    <input type="cpf" id="cpf" name="cpf" placeholder="Digite seu CPF" maxlength="14">
                 </div>
 
                 <div class="col-md-12">
@@ -33,8 +34,8 @@
                 </div>
 
                 <div class="col-md-12">
-                    <i class="fa fa-home"></i>
-                    <select name="pastoral" id="casamento__pastoral" class=" casamento__pastoral">
+                    <i class="fa fa-home comunidade"></i>
+                    <select name="pastoral" id="casamento__comunidade" class="casamento__comunidade">
                         <option value="">Escolha a comunidade</option>
                     </select>
                 </div>

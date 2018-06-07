@@ -1,10 +1,18 @@
+.schedule__table {
+    box-shadow: 6px 1px 3px;
+}
+
+.schedule__title {
+    text-align: center;
+    font-size: 22px;
+    background-color: #194894;
+}
+
 .schedule__table thead {
     background: #76a1e8;
     border: 1px solid #76a1e8;
     font-weight: 700;
     text-transform: uppercase;
-    /* padding: 1em .25em 1em 0; */
-    /* font-size: 1.2em; */
     color: #fff;
 }
 
@@ -23,8 +31,4 @@
 .schedule__modal-title {
     font-size: 24px;
     font-weight: 900;
-}
-
-.schedule__modal .modal-header {
-    /* background-color: #c04e4a */
 }

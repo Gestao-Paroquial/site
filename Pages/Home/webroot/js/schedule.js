@@ -8,12 +8,17 @@ let noChurchEvent = {
 window.onload = () => {
 	let schedule_tbody = document.querySelector('.schedule__table tbody');
 
+	// let schedule_itens = $.getJSON(`http://laravel.paroquiasle.org.br/api/agenda`, {},
 	let schedule_itens = $.getJSON(`${backEndUrl}/api/agenda`, {},
 		(res) => {
 			schedule_itens = insertDayOfWeek(res);
+			
 			schedule_itens.forEach(item => {
 				$(schedule_tbody).append(getScheduleTBody(item));
 			});
+			if (schedule_itens.length == 0) {
+				$(schedule_tbody).append(noSchedule());
+			}
 			initModal();
 		});
 }
@@ -37,33 +42,43 @@ function insertDayOfWeek(schedule) {
 		obj_data_evento = new Date(data_evento);
 		let new_item = {};
 
-		if (data_evento > current_date) {
+		let this_week = new Date();
+		this_week.setDate(this_week.getDate() + 7);
+		let day_limit = this_week.toISOString().slice(0, 10);
+
+		if (data_evento > current_date && data_evento < day_limit) {
 			let week_day = obj_data_evento.getDay();
 			switch (week_day) {
 				case 0:
 					new_item.domingo = item;
+					itens.push(new_item);					
 					break;
 				case 1:
 					new_item.segunda = item;
+					itens.push(new_item);					
 					break;
 				case 2:
 					new_item.terca = item;
+					itens.push(new_item);					
 					break;
 				case 3:
 					new_item.quarta = item;
+					itens.push(new_item);					
 					break;
 				case 4:
 					new_item.quinta = item;
+					itens.push(new_item);					
 					break;
 				case 5:
 					new_item.quinta = item;
+					itens.push(new_item);					
 					break;
 				case 6:
 					new_item.quinta = item;
+					itens.push(new_item);					
 					break;
 			}
 		}
-		itens.push(new_item);
 	});
 	return itens;
 }
@@ -98,4 +113,11 @@ function initModal() {
 
 		$("#schedule__modal").modal('show');
 	});
+}
+
+function noSchedule() {
+	return `
+	<tr style="text-align: center">
+		<td colspan="7">Não há eventos agendados</td>
+	</tr>`
 }

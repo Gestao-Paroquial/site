@@ -11,7 +11,7 @@ whenElementReady('.casamento__form', form => {
 
 		$.ajax({
 			type: 'post',
-			url: `http://laravel.paroquiasle.org.br/api/pedidos`,
+			url: `${backEndUrl}/api/pedidos`,
 			data: JSON.stringify(data),
 			contentType: "application/json; charset=utf-8",
 			traditional: true,
@@ -40,7 +40,7 @@ $(document).ready(function () {
 function loadParoquiaComboBox() {
 	$.ajax({
 		type: 'get',
-		url: 'http://laravel.paroquiasle.org.br/api/comunidades',
+		url: `${backEndUrl}/api/comunidades`,
 		contentType: "application/json; charset=utf-8",
 		success: (pastorais) => {
 			pastorais.forEach((comunidade) => {
@@ -57,8 +57,7 @@ function loadAgendaOnPicker() {
 	var date_to_disable;
 	$.ajax({
 		type: 'get',
-		// url: `${backEndUrl}/api/agendas`,
-		url: 'http://laravel.paroquiasle.org.br/api/agenda',
+		url: `${backEndUrl}/api/agenda`,
 		contentType: "application/json; charset=utf-8",
 		success: (eventos) => {
 			if (eventos) {
@@ -66,11 +65,8 @@ function loadAgendaOnPicker() {
 					date_to_disable = evento.data_inicio_evento;
 				});
 			}
-
 		},
-		error: (error) => {
-			console.log(error);
-		}
+		error: (xhr) => { console.log(xhr) }
 	});
 
 	$('#casamento__datepicker').datepicker({

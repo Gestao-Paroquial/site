@@ -5,23 +5,20 @@ let noChurchEvent = {
 	titulo: "Nenhum"
 }
 
-window.onload = () => {
-	let schedule_tbody = document.querySelector('.schedule__table tbody');
-
-	// let schedule_itens = $.getJSON(`http://laravel.paroquiasle.org.br/api/agenda`, {},
+whenElementReady('.schedule__table tbody', (schedule_tbody) => {
 	let schedule_itens = $.getJSON(`${backEndUrl}/api/agenda`, {},
-		(res) => {
-			schedule_itens = insertDayOfWeek(res);
-			
-			schedule_itens.forEach(item => {
-				$(schedule_tbody).append(getScheduleTBody(item));
-			});
-			if (schedule_itens.length == 0) {
-				$(schedule_tbody).append(noSchedule());
-			}
-			initModal();
+	(res) => {
+		schedule_itens = insertDayOfWeek(res);
+		
+		schedule_itens.forEach(item => {
+			$(schedule_tbody).append(getScheduleTBody(item));
 		});
-}
+		if (schedule_itens.length == 0) {
+			$(schedule_tbody).append(noSchedule());
+		}
+		initModal();
+	});
+});
 
 function formatDate(item) {
 	let date_evento = item.data_inicio_evento;

@@ -1,33 +1,27 @@
-function sendMail(form) {
-	if (form) {
-		loadAgendaOnPicker();
-		$('.casamento__form').submit(function (event) {
-			event.preventDefault();
+whenElementReady('.casamento__form', form => {
+	loadAgendaOnPicker();
+	$('.casamento__form').submit(function (event) {
+		event.preventDefault();
 
-			let date = $('#casamento__datepicker').val();
-			$('#casamento__datepicker').val(date.split('/').reverse().join('-'));
-			const data = formValuesToObject(form);
-			data.casamento = true;
-			data.batismo = false;
+		let date = $('#casamento__datepicker').val();
+		$('#casamento__datepicker').val(date.split('/').reverse().join('-'));
+		const data = formValuesToObject(form);
+		data.casamento = true;
+		data.batismo = false;
 
-			$.ajax({
-				type: 'post',
-				url: `http://laravel.paroquiasle.org.br/api/pedidos`,
-				data: JSON.stringify(data),
-				contentType: "application/json; charset=utf-8",
-				traditional: true,
-				success: function (res) {
-					if (res.success) $('#casamento__success').modal('show');;
-					if (res.error) showWeddingErrors(res);
-				}
-			});
+		$.ajax({
+			type: 'post',
+			url: `http://laravel.paroquiasle.org.br/api/pedidos`,
+			data: JSON.stringify(data),
+			contentType: "application/json; charset=utf-8",
+			traditional: true,
+			success: function (res) {
+				if (res.success) $('#casamento__success').modal('show');;
+				if (res.error) showWeddingErrors(res);
+			}
 		});
-	} else {
-		setTimeout(function () {
-			sendMail(document.querySelector('.casamento__form'));
-		}, 0);
-	}
-}
+	});
+});
 
 function showWeddingErrors(res) {
 	$('.casamento__message-error').empty();
@@ -37,8 +31,6 @@ function showWeddingErrors(res) {
 		);
 	}
 }
-
-sendMail(document.querySelector('.casamento__form'));
 
 $(document).ready(function () {
 	loadParoquiaComboBox();

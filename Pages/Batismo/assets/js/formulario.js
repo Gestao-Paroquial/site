@@ -7,13 +7,16 @@ $(document).ready(() => {
       $(this).next().text("");
     });
 
+    let date = $('#date').val();
+    $('#date').val(date.split('/').reverse().join('-'));
+    
     const data = formValuesToObject(this);
     data.casamento = false;
     data.batismo = true;
 
     $.ajax({
-      type: "post",
-      url: `http://laravel.paroquiasle.org.br/api/pedidos`,
+      type: "POST",
+      url: `${backEndUrl}/api/pedidos`,
       data: JSON.stringify(data),
       contentType: "application/json",
       traditional: true,
@@ -35,4 +38,14 @@ $(document).ready(() => {
 
     $("html, body").animate({ scrollTop: "0px" });
   }
+
+  whenElementReady('#date', () => {
+    $('#date').datepicker({
+      showOtherMonths: true,
+      selectOtherMonths: true,
+      dateFormat: "dd/mm/yy",
+      minDate: new Date,
+      maxDate: "31/12/2050",
+    });
+  });
 });

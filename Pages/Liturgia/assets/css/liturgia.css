@@ -1,0 +1,27 @@
+.liturgy-header {
+    /* text-align: center; */
+    height: 6em;
+    border-bottom: 1px solid
+}
+.liturgy-title {
+    text-align: center;
+}
+.liturgy-list {
+    padding: 0;
+    top: 5em;
+    position: absolute;
+    margin-left: -200px;
+    left: 42%;
+}
+.liturgy-list-item {
+    display: inline;
+    border: 1px solid;
+    padding: 1rem  5rem;
+}
+
+.liturgy-content {
+    margin-top: 4rem;
+}
+.liturgy-first-reading {
+
+}
